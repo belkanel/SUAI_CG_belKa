@@ -18,7 +18,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	BOOL bQuit = FALSE;
 	float theta = 0.0f;
 
-	/* регистрирует класс окна */
+	/* Г°ГҐГЈГЁГ±ГІГ°ГЁГ°ГіГҐГІ ГЄГ«Г Г±Г± Г®ГЄГ­Г  */
 	wcex.cbSize = sizeof(WNDCLASSEX);
 	wcex.style = CS_OWNDC;
 	wcex.lpfnWndProc = WindowProc;
@@ -36,7 +36,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	if (!RegisterClassEx(&wcex))
 		return 0;
 
-	/* создает основное окно */
+	/* Г±Г®Г§Г¤Г ГҐГІ Г®Г±Г­Г®ГўГ­Г®ГҐ Г®ГЄГ­Г® */
 	hwnd = CreateWindowEx(0,
 		L"GLSample",
 		L"OpenGL Sample",
@@ -52,9 +52,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	ShowWindow(hwnd, nCmdShow);
 
-	EnableOpenGL(hwnd, &hDC, &hRC);     //включает OpenGL
+	EnableOpenGL(hwnd, &hDC, &hRC);     //ГўГЄГ«ГѕГ·Г ГҐГІ OpenGL
 
-	while (!bQuit)      //основной цикл программы
+	while (!bQuit)      //Г®Г±Г­Г®ГўГ­Г®Г© Г¶ГЁГЄГ« ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»
 	{
 		/* check for messages */
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
@@ -72,7 +72,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		else
 		{
-			/* код анимации OpenGL */
+			/* ГЄГ®Г¤ Г Г­ГЁГ¬Г Г¶ГЁГЁ OpenGL */
 
 			glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
@@ -82,33 +82,33 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			//                y     x     z
 			glBegin(GL_TRIANGLES);
 
-			glColor3f(0.4f, 0.0f, 0.0f);        //красный цвет
-			glVertex3f(0.0f, 0.4f, 0.0f);       //верхняя точка треугольника на передней стороне
+			glColor3f(0.4f, 0.0f, 0.0f);        //ГЄГ°Г Г±Г­Г»Г© Г¶ГўГҐГІ
+			glVertex3f(0.0f, 0.4f, 0.0f);       //ГўГҐГ°ГµГ­ГїГї ГІГ®Г·ГЄГ  ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ  Г­Г  ГЇГҐГ°ГҐГ¤Г­ГҐГ© Г±ГІГ®Г°Г®Г­ГҐ
 			glColor3f(0.4f, 0.0f, 0.0f);
-			glVertex3f(-0.4f, -0.4f, 0.4f);     //левая точка
+			glVertex3f(-0.4f, -0.4f, 0.4f);     //Г«ГҐГўГ Гї ГІГ®Г·ГЄГ 
 			glColor3f(0.4f, 0.0f, 0.0f);
-			glVertex3f(0.4f, -0.4f, 0.4f);      //правая точка
+			glVertex3f(0.4f, -0.4f, 0.4f);      //ГЇГ°Г ГўГ Гї ГІГ®Г·ГЄГ 
 
-			glColor3f(0.0f, 0.0f, 0.4f);        //синий цвет
-			glVertex3f(0.0f, 0.4f, 0.0f);       //верхняя точка треугольника на правой стороне
+			glColor3f(0.0f, 0.0f, 0.4f);        //Г±ГЁГ­ГЁГ© Г¶ГўГҐГІ
+			glVertex3f(0.0f, 0.4f, 0.0f);       //ГўГҐГ°ГµГ­ГїГї ГІГ®Г·ГЄГ  ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ  Г­Г  ГЇГ°Г ГўГ®Г© Г±ГІГ®Г°Г®Г­ГҐ
 			glColor3f(0.0f, 0.0f, 0.4f);
-			glVertex3f(0.4f, -0.4f, 0.4f);      //левая точка
+			glVertex3f(0.4f, -0.4f, 0.4f);      //Г«ГҐГўГ Гї ГІГ®Г·ГЄГ 
 			glColor3f(0.0f, 0.0f, 0.4f);
-			glVertex3f(0.4f, -0.4f, -0.4f);     //правая точка
+			glVertex3f(0.4f, -0.4f, -0.4f);     //ГЇГ°Г ГўГ Гї ГІГ®Г·ГЄГ 
 
-			glColor3f(0.0f, 0.4f, 0.0f);        //зеленый цвет
-			glVertex3f(0.0f, 0.4f, 0.0f);       //низ треугольника на задней стороне
+			glColor3f(0.0f, 0.4f, 0.0f);        //Г§ГҐГ«ГҐГ­Г»Г© Г¶ГўГҐГІ
+			glVertex3f(0.0f, 0.4f, 0.0f);       //Г­ГЁГ§ ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ  Г­Г  Г§Г Г¤Г­ГҐГ© Г±ГІГ®Г°Г®Г­ГҐ
 			glColor3f(0.0f, 0.4f, 0.0f);
-			glVertex3f(0.4f, -0.4f, -0.4f);     //левая точка
+			glVertex3f(0.4f, -0.4f, -0.4f);     //Г«ГҐГўГ Гї ГІГ®Г·ГЄГ 
 			glColor3f(0.0f, 0.4f, 0.0f);
-			glVertex3f(-0.4f, -0.4f, -0.4f);        //правая точка
+			glVertex3f(-0.4f, -0.4f, -0.4f);        //ГЇГ°Г ГўГ Гї ГІГ®Г·ГЄГ 
 
-			glColor3f(0.4f, 0.0f, 0.0f);        //красный цвет
-			glVertex3f(0.0f, 0.4f, 0.0f);       //верхняя точка треугольника на левой стороне
-			glColor3f(0.0f, 0.0f, 0.4f);        //синий цвет
-			glVertex3f(-0.4f, -0.4f, -0.4f);        //левая точка
-			glColor3f(0.0f, 0.4f, 0.0f);        //зеленый цвет
-			glVertex3f(-0.4f, -0.4f, 0.4f);     //правая точка
+			glColor3f(0.4f, 0.0f, 0.0f);        //ГЄГ°Г Г±Г­Г»Г© Г¶ГўГҐГІ
+			glVertex3f(0.0f, 0.4f, 0.0f);       //ГўГҐГ°ГµГ­ГїГї ГІГ®Г·ГЄГ  ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ  Г­Г  Г«ГҐГўГ®Г© Г±ГІГ®Г°Г®Г­ГҐ
+			glColor3f(0.0f, 0.0f, 0.4f);        //Г±ГЁГ­ГЁГ© Г¶ГўГҐГІ
+			glVertex3f(-0.4f, -0.4f, -0.4f);        //Г«ГҐГўГ Гї ГІГ®Г·ГЄГ 
+			glColor3f(0.0f, 0.4f, 0.0f);        //Г§ГҐГ«ГҐГ­Г»Г© Г¶ГўГҐГІ
+			glVertex3f(-0.4f, -0.4f, 0.4f);     //ГЇГ°Г ГўГ Гї ГІГ®Г·ГЄГ 
 
 			glEnd();
 
@@ -121,9 +121,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 	}
 
-	DisableOpenGL(hwnd, hDC, hRC);      //закрывает OpenGL
+	DisableOpenGL(hwnd, hDC, hRC);      //Г§Г ГЄГ°Г»ГўГ ГҐГІ OpenGL
 
-	DestroyWindow(hwnd);        //явно закрывает окно
+	DestroyWindow(hwnd);        //ГїГўГ­Г® Г§Г ГЄГ°Г»ГўГ ГҐГІ Г®ГЄГ­Г®
 
 	return msg.wParam;
 }
