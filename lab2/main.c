@@ -112,7 +112,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     BOOL bQuit = FALSE;
     float theta = 0.0f;
 
-    /* регистрирует класс окна */
+    /* Г°ГҐГЈГЁГ±ГІГ°ГЁГ°ГіГҐГІ ГЄГ«Г Г±Г± Г®ГЄГ­Г  */
     wcex.cbSize = sizeof(WNDCLASSEX);
     wcex.style = CS_OWNDC;
     wcex.lpfnWndProc = WindowProc;
@@ -130,7 +130,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     if (!RegisterClassEx(&wcex))
         return 0;
 
-    /* создает основное окно */
+    /* Г±Г®Г§Г¤Г ГҐГІ Г®Г±Г­Г®ГўГ­Г®ГҐ Г®ГЄГ­Г® */
     hwnd = CreateWindowEx(0,
         "GLSample",
         "OpenGL Sample",
@@ -146,7 +146,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
     ShowWindow(hwnd, nCmdShow);
 
-    EnableOpenGL(hwnd, &hDC, &hRC);     //включает OpenGL
+    EnableOpenGL(hwnd, &hDC, &hRC);     //ГўГЄГ«ГѕГ·Г ГҐГІ OpenGL
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -161,7 +161,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     glEnable(GL_LIGHT2);
     glEnable(GL_COLOR_MATERIAL);
 
-    while (!bQuit)      //основной цикл программы
+    while (!bQuit)      //Г®Г±Г­Г®ГўГ­Г®Г© Г¶ГЁГЄГ« ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»
     {
         /* check for messages */
         if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
@@ -179,11 +179,11 @@ int WINAPI WinMain(HINSTANCE hInstance,
         }
         else
         {
-            /* код анимации OpenGL  */
+            /* ГЄГ®Г¤ Г Г­ГЁГ¬Г Г¶ГЁГЁ OpenGL  */
             glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-            //синий куб
+            //Г±ГЁГ­ГЁГ© ГЄГіГЎ
             glPushMatrix();
 
                 float position3[] = { 1,0,0,0 };
@@ -203,7 +203,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
             glPopMatrix();
 
-             //красный куб
+             //ГЄГ°Г Г±Г­Г»Г© ГЄГіГЎ
             glPushMatrix();
 
             float position2[] = { 0,1,0,0 };
@@ -222,7 +222,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
             glPopMatrix();
 
-                //зеленый куб
+                //Г§ГҐГ«ГҐГ­Г»Г© ГЄГіГЎ
             glPushMatrix();
 
             float position1[] = { 0,0,1,0 };
@@ -248,9 +248,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
         }
     }
 
-    DisableOpenGL(hwnd, hDC, hRC);      //выключает OpenGL
+    DisableOpenGL(hwnd, hDC, hRC);      //ГўГ»ГЄГ«ГѕГ·Г ГҐГІ OpenGL
 
-    DestroyWindow(hwnd);        //явно закрывает окно
+    DestroyWindow(hwnd);        //ГїГўГ­Г® Г§Г ГЄГ°Г»ГўГ ГҐГІ Г®ГЄГ­Г®
 
     return msg.wParam;
 }
